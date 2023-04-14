@@ -52,7 +52,8 @@ public class MyArrayList implements MyList{
 
     @Override
     public void clear() {
-
+       Object[] newArr = new Object[size = 0];
+       arr = newArr;
     }
 
     @Override

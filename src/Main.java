@@ -4,5 +4,7 @@ public class Main {
         System.out.println(myArrayList.size());
         myArrayList.add(123);
         System.out.println(myArrayList.get(0));
+        myArrayList.clear();
+        System.out.println(myArrayList.size());
     }
 }
