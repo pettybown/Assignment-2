@@ -63,7 +63,10 @@ public class MyArrayList implements MyList{
 
     @Override
     public Object remove(int index) {
-        return null;
+        for(int i= index + 1; i<size; i++){
+            arr[i-1] = arr[i];
+        }
+        return size--;
     }
 
     @Override
@@ -85,7 +88,16 @@ public class MyArrayList implements MyList{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (o == arr[i]) {
+                break;
+            }
+            else{
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
