@@ -14,16 +14,25 @@ public class MyArrayList implements MyList{
 
     @Override
     public boolean contains(Object o) {
-
-        return false;
+        int count = 0;
+        for (int i = 0; i < arr.length; i++){
+            if(o == arr[i]){
+                count++;
+            }
+        }
+        if (count > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public void add(Object item) {
         if(size == arr.length){
             increaseBuffer();
-        }
-        else {
+        } else {
             arr[size++] = item;
         }
 
@@ -31,6 +40,13 @@ public class MyArrayList implements MyList{
 
     @Override
     public void add(Object item, int index) {
+        if(size == arr.length) {
+            increaseBuffer();
+        }
+        else {
+            this.size +=1;
+            arr[index]= item;
+        }
     }
     public void increaseBuffer(){
         Object[] newArr = new Object[arr.length * 2];
@@ -51,14 +67,20 @@ public class MyArrayList implements MyList{
     }
 
     @Override
-    public void clear() {
-       Object[] newArr = new Object[size = 0];
-       arr = newArr;
+    public void clear(){
+        this.arr = new Object[5];
+        this.size = 0;
     }
 
     @Override
     public Object get(int index) {
+        checkIndex(index);
         return arr[index];
+    }
+    public void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
     }
 
     @Override
@@ -73,6 +95,7 @@ public class MyArrayList implements MyList{
 
     @Override
     public void sort() {
+
 
     }
 }
