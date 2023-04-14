@@ -3,5 +3,6 @@ public class Main {
         MyArrayList myArrayList = new MyArrayList();
         System.out.println(myArrayList.size());
         myArrayList.add(123);
+        System.out.println(myArrayList.get(0));
     }
 }
