@@ -102,7 +102,16 @@ public class MyArrayList implements MyList{
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int count = 0;
+        for (int i = size; i > 0; i--) {
+            if (o == arr[i]) {
+                break;
+            }
+            else{
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
