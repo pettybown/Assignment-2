@@ -7,7 +7,7 @@ public class Main {
         System.out.println(myArrayList.get(1));
         myArrayList.add(2, 1);
         System.out.println(myArrayList.get(1));
-        System.out.println(myArrayList.get(2));
+        System.out.println(myArrayList.indexOf(2));
         myArrayList.sort();
         MyLinkedList myLinkedList = new MyLinkedList();
         System.out.println(myLinkedList.size());
