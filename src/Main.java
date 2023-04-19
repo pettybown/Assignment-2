@@ -31,6 +31,8 @@ public class Main {
         System.out.println(myLinkedList.indexOf(3));
         System.out.println(myLinkedList.lastIndexOf(3));
         myLinkedList.sort();
+        myLinkedList.clear();
+        System.out.println(myLinkedList.size());
 
     }
 }
