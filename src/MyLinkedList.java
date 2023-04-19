@@ -24,6 +24,18 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void add(Object item) {
+        Node newNode = new Node(item);
+        if (head == null) {
+            newNode.next = null;
+            newNode.previous = null;
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.previous = tail;
+            tail = newNode;
+        }
+        size++;
     }
 
     @Override
@@ -43,6 +55,7 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void clear() {
+
     }
 
     @Override
