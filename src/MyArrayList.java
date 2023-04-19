@@ -9,7 +9,7 @@ public class MyArrayList implements MyList{
 
     @Override
     public int size() {
-        return arr.length;
+        return size;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class MyArrayList implements MyList{
             increaseBuffer();
         }
         else {
-            this.size +=1;
+            size++;
             arr[index]= item;
         }
     }
@@ -58,8 +58,23 @@ public class MyArrayList implements MyList{
 
     @Override
     public boolean remove(Object item) {
-        return false;
-    }
+        int count = 0;
+        for(int i = 0; i < size; i++){
+            if(item == arr[i]){
+                arr[i - 1] = arr[i];
+                size--;
+                count++;
+                break;
+            }
+        }
+        if (count == 1){
+            return true;
+
+        }
+        else {
+            return false;
+
+        }}
 
     @Override
     public Object remove(int index) {
@@ -111,12 +126,24 @@ public class MyArrayList implements MyList{
                 count++;
             }
         }
-        return count;
+        return size - count;
     }
 
     @Override
     public void sort() {
-
+        try{
+        for (int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                if ((int) arr[j] < (int) arr[i]) {
+                    Object temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }}
+        }
 
     }
-}
+    catch (Exception e){
+        System.out.println("array must be digit");
+    }
+    }
+     }
