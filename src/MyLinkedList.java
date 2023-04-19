@@ -19,6 +19,11 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public boolean contains(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (get(i) == o) {
+                return true;
+            }
+        }
         return false;
     }
     private void createNode(E item) {
