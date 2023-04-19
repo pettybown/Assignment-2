@@ -85,7 +85,7 @@ public class MyLinkedList<E> implements MyList{
      * @function remove удаляет объект из LinkedList
      * @param item объект удаления
      * @return boolean
-     * **/
+     **/
     @Override
     public boolean remove(Object item) {
         if (head == null) {
