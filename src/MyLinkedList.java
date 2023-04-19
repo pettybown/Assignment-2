@@ -12,11 +12,20 @@ public class MyLinkedList<E> implements MyList{
     private Node<E> head;
     private Node<E> tail;
     private int size;
+    /**
+     * @function size возвращает длину LinkedList
+     * @noparams
+     * @return int
+     * **/
     @Override
     public int size() {
         return this.size;
     }
-
+    /**
+     * @function contains true если Object o в LinkedList
+     * @param o объект поиска
+     * @return boolean
+     * **/
     @Override
     public boolean contains(Object o) {
         for (int i = 0; i < size; i++) {
@@ -26,7 +35,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return false;
     }
-
+    /**
+     * @function add добавляет объект в LinkedList
+     * @param item объект для добавления
+     * @return void
+     * **/
     @Override
     public void add(Object item) {
         Node newNode = new Node(item);
@@ -42,6 +55,12 @@ public class MyLinkedList<E> implements MyList{
         }
         size++;
     }
+    /**
+     * @function add добавляет объект на определенный индекс
+     * @param item объект для добавления
+     * @param index индекс куда нужно добавить item
+     * @return void
+     * **/
 
     @Override
     public void add(Object item, int index) {
@@ -62,6 +81,11 @@ public class MyLinkedList<E> implements MyList{
         }
         size++;
     }
+    /**
+     * @function remove удаляет объект из LinkedList
+     * @param item объект удаления
+     * @return boolean
+     * **/
     @Override
     public boolean remove(Object item) {
         if (head == null) {
@@ -81,6 +105,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return false;
     }
+    /**
+     * @function remove удаляет объект из LinkedList
+     * @param index индекст элемента для удаления
+     * @return Object
+     * **/
     @Override
     public Object remove(int index) {
         if (head == null) {
@@ -104,13 +133,22 @@ public class MyLinkedList<E> implements MyList{
         current.next = current.next.next;
         return removedNode;
     }
-
+    /**
+     * @function clear очищает LinkedList
+     * @noparam
+     * @return void
+     * **/
     @Override
     public void clear() {
         head = null;
         tail = null;
         size = 0;
     }
+    /**
+     * @function get возвращает объект из LinkedList под его индексом
+     * @param index индекс объекта
+     * @return E
+     * **/
 
     @Override
     public Object get(int index) {
@@ -123,6 +161,12 @@ public class MyLinkedList<E> implements MyList{
         }
         return current.item;
     }
+    /**
+     * @function indexOf возвращает индекс первого вхождения объекта
+     * @param o объект для поиска
+     * @return int
+     * **/
+
 
     @Override
     public int indexOf(Object o) {
@@ -137,6 +181,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return -1;
     }
+    /**
+     * @function lastIndexOf возвращает индекс последнего вхождения объекта в LinkedList
+     * @param o объект для поиска
+     * @return int
+     * **/
 
     @Override
     public int lastIndexOf(Object o) {
@@ -152,6 +201,11 @@ public class MyLinkedList<E> implements MyList{
         }
         return lastIndex;
     }
+    /**
+     * @function sort сортирует LinkedList (bubble sort)
+     * @noparam
+     * @return void
+     * **/
 
     @Override
     public void sort() {
