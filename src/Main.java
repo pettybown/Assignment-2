@@ -4,6 +4,8 @@ public class Main {
         myArrayList.add(1);
         myArrayList.add("nurali");
         myArrayList.sort();
+        MyLinkedList myLinkedList = new MyLinkedList();
+        System.out.println(myLinkedList.size());
 
     }
 }

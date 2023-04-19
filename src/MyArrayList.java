@@ -9,7 +9,7 @@ public class MyArrayList implements MyList{
 
     @Override
     public int size() {
-        return size;
+        return this.size;
     }
 
     @Override
