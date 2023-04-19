@@ -6,8 +6,11 @@ public class Main {
         myArrayList.add(1, 1);
         System.out.println(myArrayList.get(1));
         myArrayList.add(2, 1);
+        myArrayList.add(3, 1);
+        myArrayList.add(2, 1);
         System.out.println(myArrayList.get(1));
         System.out.println(myArrayList.indexOf(2));
+        System.out.println(myArrayList.lastIndexOf(2));
         myArrayList.sort();
         MyLinkedList myLinkedList = new MyLinkedList();
         System.out.println(myLinkedList.size());
