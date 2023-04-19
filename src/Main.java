@@ -13,6 +13,8 @@ public class Main {
         System.out.println(myLinkedList.size());
         myLinkedList.add("nurali");
         System.out.println(myLinkedList.size());
+        myLinkedList.clear();
+        System.out.println(myLinkedList.size());
 
     }
 }
