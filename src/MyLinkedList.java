@@ -60,7 +60,7 @@ public class MyLinkedList<E> implements MyList{
      * @param item объект для добавления
      * @param index индекс куда нужно добавить item
      * @return void
-     * **/
+     **/
 
     @Override
     public void add(Object item, int index) {
