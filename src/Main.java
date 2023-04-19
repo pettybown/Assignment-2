@@ -14,6 +14,7 @@ public class Main {
         myArrayList.clear();
         System.out.println(myArrayList.size());
         myArrayList.sort();
+        System.out.println(myArrayList.contains("asda"));
         MyLinkedList myLinkedList = new MyLinkedList();
         System.out.println(myLinkedList.size());
         System.out.println(myLinkedList.size());
@@ -33,6 +34,7 @@ public class Main {
         myLinkedList.sort();
         myLinkedList.clear();
         System.out.println(myLinkedList.size());
+
 
     }
 }
