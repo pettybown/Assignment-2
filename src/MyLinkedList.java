@@ -21,6 +21,16 @@ public class MyLinkedList<E> implements MyList{
     public boolean contains(Object o) {
         return false;
     }
+    private void createNode(E item) {
+        Node<E> node = new Node<>(item);
+        if (size == 0) {
+            this.head = node;
+        } else {
+            node.previous = this.tail;
+            this.tail.next = node;
+        }
+        this.tail = node;
+    }
 
     @Override
     public void add(Object item) {
@@ -40,9 +50,7 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void add(Object item, int index) {
-
     }
-
     @Override
     public boolean remove(Object item) {
         return false;
@@ -62,7 +70,15 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public Object get(int index) {
-        return 0;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node result = head;
+        for (int i = 0; i < index; i++) {
+            result = result.next;
+        }
+
+        return result.item;
     }
 
     @Override

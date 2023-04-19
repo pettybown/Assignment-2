@@ -11,10 +11,13 @@ public class Main {
         myArrayList.sort();
         MyLinkedList myLinkedList = new MyLinkedList();
         System.out.println(myLinkedList.size());
-        myLinkedList.add("nurali");
         System.out.println(myLinkedList.size());
-        myLinkedList.clear();
+        myLinkedList.add(1);
+        myLinkedList.add(2);
+        myLinkedList.add(3);
+        myLinkedList.add(4);
         System.out.println(myLinkedList.size());
+        System.out.println(myLinkedList.get(2));
 
     }
 }
