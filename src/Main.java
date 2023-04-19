@@ -11,6 +11,8 @@ public class Main {
         System.out.println(myArrayList.get(1));
         System.out.println(myArrayList.indexOf(2));
         System.out.println(myArrayList.lastIndexOf(2));
+        myArrayList.clear();
+        System.out.println(myArrayList.size());
         myArrayList.sort();
         MyLinkedList myLinkedList = new MyLinkedList();
         System.out.println(myLinkedList.size());
