@@ -45,6 +45,22 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void add(Object item, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node newNode = new Node(item);
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node current = head;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+        size++;
     }
     @Override
     public boolean remove(Object item) {
@@ -139,6 +155,33 @@ public class MyLinkedList<E> implements MyList{
 
     @Override
     public void sort() {
-
+        if (head == null || head.next == null) {
+            return;
+        }
+        boolean swapped;
+        do {
+            swapped = false;
+            Node prev = null;
+            Node current = head;
+            Node next = head.next;
+            while (next != null) {
+                if (((Comparable)current.item).compareTo(next.item) > 0) {
+                    if (prev != null) {
+                        prev.next = next;
+                    } else {
+                        head = next;
+                    }
+                    current.next = next.next;
+                    next.next = current;
+                    prev = next;
+                    next = current.next;
+                    swapped = true;
+                } else {
+                    prev = current;
+                    current = next;
+                    next = next.next;
+                }
+            }
+        } while (swapped);
     }
 }
