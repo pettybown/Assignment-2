@@ -28,6 +28,7 @@ public class Main {
         System.out.println(myLinkedList.get(2));
         System.out.println(myLinkedList.indexOf(3));
         System.out.println(myLinkedList.lastIndexOf(3));
+        myLinkedList.sort();
 
     }
 }
