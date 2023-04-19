@@ -26,16 +26,6 @@ public class MyLinkedList<E> implements MyList{
         }
         return false;
     }
-    private void createNode(E item) {
-        Node<E> node = new Node<>(item);
-        if (size == 0) {
-            this.head = node;
-        } else {
-            node.previous = this.tail;
-            this.tail.next = node;
-        }
-        this.tail = node;
-    }
 
     @Override
     public void add(Object item) {
@@ -60,10 +50,28 @@ public class MyLinkedList<E> implements MyList{
     public boolean remove(Object item) {
         return false;
     }
-
     @Override
     public Object remove(int index) {
-        return null;
+        if (head == null) {
+            return null;
+        }
+        if (index == 0) {
+            Node removedNode = head;
+            head = head.next;
+            return removedNode;
+        }
+        Node current = head;
+        int count = 0;
+        while (current != null && count < index - 1) {
+            current = current.next;
+            count++;
+        }
+        if (current == null || current.next == null) {
+            return null;
+        }
+        Node removedNode = current.next;
+        current.next = current.next.next;
+        return removedNode;
     }
 
     @Override

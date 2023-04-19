@@ -19,6 +19,8 @@ public class Main {
         System.out.println(myLinkedList.size());
         System.out.println(myLinkedList.get(2));
         System.out.println(myLinkedList.contains(2));
+        myLinkedList.remove(2);
+        System.out.println(myLinkedList.get(2));
 
     }
 }
