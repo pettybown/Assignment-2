@@ -48,6 +48,21 @@ public class MyLinkedList<E> implements MyList{
     }
     @Override
     public boolean remove(Object item) {
+        if (head == null) {
+            return false;
+        }
+        if (head.item.equals(item)) {
+            head = head.next;
+            return true;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.item.equals(item)) {
+                current.next = current.next.next;
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
     @Override
@@ -86,12 +101,11 @@ public class MyLinkedList<E> implements MyList{
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
-        Node result = head;
+        Node current = head;
         for (int i = 0; i < index; i++) {
-            result = result.next;
+            current = current.next;
         }
-
-        return result.item;
+        return current.item;
     }
 
     @Override

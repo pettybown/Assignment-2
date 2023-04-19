@@ -13,13 +13,13 @@ public class Main {
         System.out.println(myLinkedList.size());
         System.out.println(myLinkedList.size());
         myLinkedList.add(1);
-        myLinkedList.add(2);
+        myLinkedList.add("nurali");
         myLinkedList.add(3);
         myLinkedList.add(4);
         System.out.println(myLinkedList.size());
         System.out.println(myLinkedList.get(2));
         System.out.println(myLinkedList.contains(2));
-        myLinkedList.remove(2);
+        System.out.println(myLinkedList.remove("nurali"));
         System.out.println(myLinkedList.get(2));
 
     }
