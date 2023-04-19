@@ -15,6 +15,8 @@ public class Main {
         myLinkedList.add(1);
         myLinkedList.add("nurali");
         myLinkedList.add(3);
+        myLinkedList.add(3);
+        myLinkedList.add(3);
         myLinkedList.add(4);
         System.out.println(myLinkedList.size());
         System.out.println(myLinkedList.get(2));
@@ -22,6 +24,7 @@ public class Main {
         System.out.println(myLinkedList.remove("nurali"));
         System.out.println(myLinkedList.get(2));
         System.out.println(myLinkedList.indexOf(3));
+        System.out.println(myLinkedList.lastIndexOf(3));
 
     }
 }
